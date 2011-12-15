@@ -108,8 +108,9 @@ public class DaysOfChristmas extends JavaPlugin
 						DaysOfChristmas.this.playertasks.put(p, tid);
 						DaysOfChristmas.this.partialtime.put(p, System.currentTimeMillis() / 1000);
 						DaysOfChristmas.this.partialday.put(p, doc);
-						saveStuff();
 					}
+					
+					saveStuff();
 				}
 			}
 
@@ -127,8 +128,9 @@ public class DaysOfChristmas extends JavaPlugin
 					final long timespent = (System.currentTimeMillis() / 1000) - startTime;
 					final int timesum = (int) ((timespent * 20) + DaysOfChristmas.this.playerinvest.get(p));
 					DaysOfChristmas.this.playerinvest.put(p, timesum);
-					saveStuff();
 				}
+				
+				saveStuff();
 			}
 		};
 
