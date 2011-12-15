@@ -90,6 +90,11 @@ public class DaysOfChristmas extends JavaPlugin
 					{
 						DaysOfChristmas.this.playerinvest.put(p, 0);
 					}
+					
+					if (DaysOfChristmas.this.partialday.get(p) != doc)
+					{
+					    DaysOfChristmas.this.playerinvest.put(p, 0);
+					}
 
 					if (DaysOfChristmas.this.playerday.get(p) != doc)
 					{
@@ -102,7 +107,7 @@ public class DaysOfChristmas extends JavaPlugin
 						} while (DaysOfChristmas.this.playerrecv.get(p).contains(r));
 
 						final RunnableGift rg = new RunnableGift(gifts.get(r), doc, p);
-						final long myDelay = delay - (DaysOfChristmas.this.partialday.get(p) == doc ? DaysOfChristmas.this.playerinvest.get(p) : 0);
+						final long myDelay = delay - DaysOfChristmas.this.playerinvest.get(p);
 						int tid = Bukkit.getScheduler().scheduleSyncDelayedTask(DaysOfChristmas.this, rg, myDelay);
 						
 						DaysOfChristmas.this.playertasks.put(p, tid);
